@@ -1,0 +1,30 @@
+.border {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.button {
+  position: absolute;
+  right: 5px;
+  min-height: 30px;
+  cursor: pointer;
+}
+
+.info {
+  padding: 8px 0 8px 5px;
+}
+
+.icon {
+  padding: 0 5px;
+}
+
+.text:first-child {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
