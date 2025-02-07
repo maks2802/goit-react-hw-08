@@ -1,9 +1,13 @@
 import clsx from "clsx";
-import styles from "./Contact.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
+import styles from "./Contact.module.css";
 
-const Contact = ({ id, name, number, onDelete }) => {
+const Contact = ({ name, number, id }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.border}>
       <div className={styles.info}>
@@ -19,7 +23,7 @@ const Contact = ({ id, name, number, onDelete }) => {
       <button
         className={styles.button}
         type="submit"
-        onClick={() => onDelete(id)}
+        onClick={() => dispatch(deleteContact(id))}
       >
         Delete
       </button>
