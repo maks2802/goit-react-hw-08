@@ -1,18 +1,23 @@
 .box {
   display: flex;
   flex-direction: column;
-  margin-bottom: 25px;
-  width: 350px;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  margin-top: 20px;
 }
 
 .text {
   font-size: 16px;
-  margin-bottom: 5px;
 }
 
 .input {
   padding: 8px;
-  border: 1px solid gray;
-  border-radius: 4px;
-  font-size: 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

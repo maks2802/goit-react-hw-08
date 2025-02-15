@@ -1,12 +1,18 @@
 import clsx from "clsx";
+import toast from "react-hot-toast";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps";
+import { deleteContact } from "../../redux/contacts/operations";
 import styles from "./Contact.module.css";
 
 const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(deleteContact(id));
+    toast.success(`${name} Deleted!`);
+  };
 
   return (
     <div className={styles.border}>
@@ -20,11 +26,7 @@ const Contact = ({ name, number, id }) => {
           {number}
         </p>
       </div>
-      <button
-        className={styles.button}
-        type="submit"
-        onClick={() => dispatch(deleteContact(id))}
-      >
+      <button className={styles.button} type="submit" onClick={handleDelete}>
         Delete
       </button>
     </div>
